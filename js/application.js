@@ -645,6 +645,7 @@ var render = function () {
   ctx.fillText(game_state.bet, 602, 358);
 
   //sync to monetize.js credits
+    credits -= parseInt(game_state.bet);
     credits += parseInt(game_state.credits);
     showCredits();
   
