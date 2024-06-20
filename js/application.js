@@ -644,6 +644,10 @@ var render = function () {
   ctx.fillText(game_state.credits, 512, 358);
   ctx.fillText(game_state.bet, 602, 358);
 
+  //sync to monetize.js credits
+    credits += parseInt(game_state.credits);
+    showCredits();
+  
   // draw game state highlight tiles
   if (game_state.show_highlight_tiles && game_state.highlight_tiles.length && !game_state.show_lines) {
     var winnings_x_coord = 155;
