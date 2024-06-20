@@ -1,5 +1,6 @@
 // Lucky Slot Machine
 // Design and Development by Travis Luong
+// line 644 monetize.js render
 
 // declare globals
 var WIDTH = 800;
