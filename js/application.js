@@ -1,6 +1,7 @@
 // Lucky Slot Machine
 // Design and Development by Travis Luong
 // line 491 monetize.js render win result
+// game start line 360
 
 // declare globals
 var WIDTH = 800;
@@ -357,7 +358,11 @@ function GameState(win, paid, credits, bet, tiles, highlight_tiles, show_highlig
   }
 }
 
-var game_state = new GameState(0, 0, 50, 0, [], [], true);
+if(getCookie("price")){
+ credits =  parseInt(getCookie("price"));
+}
+
+var game_state = new GameState(0, 0, credits, 0, [], [], true);
 
 game_state.tiles.push(new Tile('whitebook', tile1_img, '1'));
 game_state.tiles.push(new Tile('greenbook', tile2_img, '1'));
@@ -492,7 +497,7 @@ var spin_handler = function(){
 
 //sync to monetize.js credits
     credits -= parseInt(game_state.bet);
-    credits += parseInt(game_state.credits);
+    credits += parseInt(game_state.win);
     setCookie("price", credits, 30);
     showCredits();
 
